@@ -1,7 +1,7 @@
 import type { Knex } from "knex";
-import dotenv from "dotenv";
+import { config as envConfig } from "dotenv";
 
-dotenv.config()
+envConfig()
 // Update with your config settings.
 
 const config: { [key: string]: Knex.Config } = {
