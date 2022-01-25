@@ -3,7 +3,7 @@ interface IToken {
     __typename: string
 }
 
-interface IPair {
+export interface IPair {
     id: string,
     token0: IToken,
     token1: IToken,
