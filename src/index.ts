@@ -1,9 +1,11 @@
 import { config } from "dotenv";
 import { createServer } from "http";
-import "./jobs/fetchPairs";
 import logger from "./logger";
+import FetchPairs from "./jobs/fetchPairs"
 
 config();
+
+FetchPairs.start().then().catch(error => logger.info(error));
 
 const server = createServer()
 
