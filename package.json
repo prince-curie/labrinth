@@ -8,9 +8,9 @@
       "start": "rm -rf dist && npm run build && node dist/index.js",
       "dev": "nodemon src/index.ts",
       "test": "echo \"Error: no test specified\" && exit 1",
-      "migrate:make": "ts-node -r dotenv/config ./node_modules/Knex/bin/cli.js migrate:make --knexfile src/config/knexfile.ts",
-      "migrate:latest": "ts-node -r dotenv/config ./node_modules/Knex/bin/cli.js migrate:latest --knexfile src/config/knexfile.ts",
-      "migrate:rollback": "ts-node -r dotenv/config ./node_modules/Knex/bin/cli.js migrate:rollback --knexfile src/config/knexfile.ts"
+      "migrate:make": "ts-node -r dotenv/config ./node_modules/knex/bin/cli.js migrate:make --knexfile src/config/knexfile.ts",
+      "migrate:latest": "ts-node -r dotenv/config ./node_modules/knex/bin/cli.js migrate:latest --knexfile src/config/knexfile.ts",
+      "migrate:rollback": "ts-node -r dotenv/config ./node_modules/knex/bin/cli.js migrate:rollback --knexfile src/config/knexfile.ts"
    },
    "keywords": [],
    "author": "",
