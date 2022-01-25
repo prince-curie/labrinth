@@ -77,7 +77,7 @@ class FetchPairs {
     }
 
     public async start() {
-        const fetchPairs:ScheduledTask = schedule('*/5 * * * *', async () => {
+        const fetchPairs:ScheduledTask = schedule('*/30 * * * *', async () => {
             try {
                 logger.info('Started')
 
