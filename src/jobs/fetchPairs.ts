@@ -6,7 +6,6 @@ import "cross-fetch/polyfill";
 import db from "../database";
 import { config } from "dotenv";
 import { IData, IResultItem, IPair } from "../interfaces";
-import logger from "../logger";
 
 config();
 
@@ -77,15 +76,13 @@ class FetchPairs {
     }
 
     public async start() {
-        const fetchPairs:ScheduledTask = schedule('*/30 * * * *', async () => {
+        const fetchPairs:ScheduledTask = schedule('*/1 * * * *', async () => {
             try {
-                logger.info('Started')
-
                 let allPairs:IPair[] = await this.getAllPairs();
-                let formattedPairs:IResultItem[] = await this.formatPairs(allPairs);
-                await this.insertToDb(formattedPairs);
 
-                logger.info('Stopped')
+                let formattedPairs:IResultItem[] = await this.formatPairs(allPairs);
+
+                await this.insertToDb(formattedPairs);
             } catch (error) {
                 throw error;
             }
